@@ -1,6 +1,6 @@
-from operator import itemgetter
-import sys
 import os
+import sys
+from operator import itemgetter
 
 from langchain.document_loaders import PyPDFLoader
 from langchain.embeddings import HuggingFaceEmbeddings
@@ -10,10 +10,7 @@ from langchain.text_splitter import SentenceTransformersTokenTextSplitter
 from langchain.vectorstores import FAISS
 from langchain_core.output_parsers import StrOutputParser
 
-paper_url = "https://arxiv.org/pdf/2306.02516.pdf"
-emb_model_name = "all-MiniLM-L6-v2"
-llm_path = "./models/mistral-7b-instruct-v0.2.Q4_0.gguf"
-system_prompt = "You are AI assistant who helps humans understand scientific papers. With each request, you receive few relevant chunks from the paper (each of them is starts with 'Chunk \{i\}', where i is the chunk number), and then user question prepended by 'User question: '. Your task is to give a clear and concise answer to the user question based on provided chunks from the paper."
+SYSTEM_PROMPT = "You are AI assistant who helps humans understand scientific papers. With each request, you receive few relevant chunks from the paper (each of them is starts with 'Chunk \{i\}', where i is the chunk number), and then user question prepended by 'User question: '. Your task is to give a clear and concise answer to the user question based on provided chunks from the paper."
 
 
 def format_chunks(chunks):
@@ -79,7 +76,7 @@ def get_chain(
         {
             "query": itemgetter("query"),
             "chunks": itemgetter("query") | retriever | format_chunks,
-            "instructions": lambda _: system_prompt,
+            "instructions": lambda _: SYSTEM_PROMPT,
         }
         | prompt
         | llm

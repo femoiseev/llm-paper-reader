@@ -5,8 +5,8 @@ Command-line LLM-based bot that answers questions about scientific papers.
 from prompt_toolkit.application import Application
 from prompt_toolkit.key_binding import KeyBindings
 from prompt_toolkit.layout import Layout
-from prompt_toolkit.widgets import Frame, TextArea
 from prompt_toolkit.layout.containers import HSplit
+from prompt_toolkit.widgets import Frame, TextArea
 
 import llm
 
