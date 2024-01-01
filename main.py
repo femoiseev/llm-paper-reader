@@ -37,10 +37,7 @@ query = TextArea(
     focus_on_click=True,
 )
 answer = TextArea(
-    multiline=True,
-    read_only=True,
-    text="",
-    focus_on_click=True,
+    multiline=True, read_only=True, text="", focus_on_click=True, scrollbar=True
 )
 
 root_container = HSplit(

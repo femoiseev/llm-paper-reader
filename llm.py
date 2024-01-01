@@ -36,9 +36,9 @@ def create_llm(llm_path):
         model_path=llm_path,
         n_gpu_layers=-1,
         n_ctx=3072,
-        temperature=0.2,
+        temperature=0.7,
         max_tokens=2000,
-        top_p=0.9,
+        top_p=0.95,
         verbose=False,
     )
 
