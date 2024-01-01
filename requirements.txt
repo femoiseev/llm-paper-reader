@@ -1,0 +1,6 @@
+langchain>=0.0.353
+llama_cpp_python>=0.2.25
+prompt-toolkit>=3.0.36
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.2
+pypdf>=3.17.4

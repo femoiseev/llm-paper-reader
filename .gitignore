@@ -1,3 +1,9 @@
+# LLM checkpoints
+models/
+
+# All local notebooks etc
+local/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
